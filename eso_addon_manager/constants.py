@@ -6,7 +6,7 @@ _HOMEDIR = os.path.join(
 )
 
 # Global logging format
-LOGGING_FMT = '%(asctime)s %(message)s'
+LOGGING_FORMAT = '%(asctime)s %(message)s'
 
 # Defaults for the configuration file.
 DEFAULT_CONFIG_PATH = os.path.join(

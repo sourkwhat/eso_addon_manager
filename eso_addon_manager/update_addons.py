@@ -75,7 +75,7 @@ def _download_addons(config, yes_no_cb):
         logger.info(f'Created temporary directory addons at {download_dir}')
         for addon in config.all_addons:
             addon.download(download_dir)
-        logger.info('Downloading finished!')
+        logger.log(logging.SUCCESS, 'Downloading finished!')
         return download_dir
     except:
         logger.critical('Error occured while downloading')
@@ -88,13 +88,17 @@ def _download_addons(config, yes_no_cb):
 def _install_addons(config, yes_no_cb, download_dir):
     logger = logging.getLogger()
 
-    logger.info('Install addons?')
     try:
+        if config.prompt_to_install:
+            logger.info('Install addons?')
+
         if not config.prompt_to_install or yes_no_cb():
+            logger.info('Installing addons!')
             copy_replace_directory_contents(
                 download_dir,
                 config.addons_directory
             )
+            logger.log(logging.SUCCESS, 'Finished installing addons!')
         else:
             logger.info(f'Addons will not be installed. They are still inside {download_dir}, would you like to delete them now?')
             if yes_no_cb():

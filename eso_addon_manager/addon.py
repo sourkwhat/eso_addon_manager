@@ -31,7 +31,7 @@ class AddOn:
         with zipfile.ZipFile(in_memory_zip, mode='r', compression=zipfile.ZIP_DEFLATED) as zf:
             zf.extractall(download_dir)
 
-        self.logger.info('Finished download')
+        self.logger.log(logging.SUCCESS, 'Finished download')
 
     def read_api_version(self, unzip_dir):
         pass

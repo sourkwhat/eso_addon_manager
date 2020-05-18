@@ -1,4 +1,4 @@
-from eso_addon_manager.cli import run_subprogram
+from eso_addon_manager.cli import run_cli
 from eso_addon_manager.gui import run_gui
 from eso_addon_manager.logs import init_cli_logger
 
