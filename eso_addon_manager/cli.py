@@ -12,6 +12,7 @@ from eso_addon_manager.exceptions import (
     InvalidCommandError,
     NoConfigFileError
 )
+from eso_addon_manager.logs import init_cli_logger
 from eso_addon_manager.update_addons import update_addons
 
 import colorama
@@ -23,6 +24,12 @@ def print_color(color):
     sys.stdout.write(color)
     yield
     sys.stdout.write(colorama.Style.RESET_ALL)
+
+
+def run_cli():
+    colorama.init()
+    init_cli_logger()
+    run_subprogram()
 
 
 def run_subprogram():

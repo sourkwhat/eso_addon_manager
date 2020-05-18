@@ -5,6 +5,9 @@ _HOMEDIR = os.path.join(
     os.environ['HomePath']
 )
 
+# Global logging format
+LOGGING_FMT = '%(asctime)s %(message)s'
+
 # Defaults for the configuration file.
 DEFAULT_CONFIG_PATH = os.path.join(
     _HOMEDIR,
@@ -31,3 +34,8 @@ DEFAULT_CONFIG_FILE = {
 
 # Streaming chunk size for downloading addons
 DEFAULT_BYTE_CHUNK_SIZE = 8192
+
+# GUI main window parameters
+MAIN_WINDOW_WIDTH = 500
+MAIN_WINDOW_HEIGHT = 500
+MAIN_WINDOW_TITLE = 'Harro earthlings!!!!'

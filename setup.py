@@ -29,6 +29,10 @@ setuptools.setup(
     install_requires=[
         'pyyaml',
         'requests',
-        'colorama'
+        'colorama',
+        'pyqt5',
+        'qdarkstyle',
+        'qtpy',
+        'pyinstaller'
     ]
 )
