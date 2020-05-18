@@ -14,11 +14,15 @@ def iter_top_directories(dir_path):
 
 
 def empty_directory(dir_path):
-    return bool(os.listdir(dir_path))
+    return not bool(os.listdir(dir_path))
 
 
 def file_exists(file_path):
     return os.path.isfile(file_path)
+
+
+def directory_exists(dir_path):
+    return os.path.isdir(dir_path)
 
 
 def copy_directory(src_dir, target_dir):

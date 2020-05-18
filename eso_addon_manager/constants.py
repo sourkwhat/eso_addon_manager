@@ -28,3 +28,6 @@ DEFAULT_CONFIG_FILE = {
             DEFAULT_DELETE_TEMPORARY_DIRECTORIES_ON_ERROR
     }
 }
+
+# Streaming chunk size for downloading addons
+DEFAULT_BYTE_CHUNK_SIZE = 8192

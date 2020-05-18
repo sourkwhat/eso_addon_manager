@@ -1,0 +1,50 @@
+config:
+  api_version: 100030
+  prompt_to_install: false
+  delete_temporary_directories_on_error: true
+  addons_directory: "C:\\Users\\Kyle Allen\\Documents\\Elder Scrolls Online\\live\\AddOns"
+combat_metrics:
+  ref_link: https://www.esoui.com/downloads/info1360-CombatMetrics.html
+  link: https://cdn.esoui.com/downloads/file1360/CombatMetrics-1.0.0.zip?158974745815
+  dependencies:
+    - https://cdn.esoui.com/downloads/file7/LibAddonMenu-2.0r30.zip
+    - https://cdn.esoui.com/downloads/file1146/LibCustomMenu_v6.9.2.zip?158750352415
+    - https://cdn.esoui.com/downloads/file44/LibStub-1.0r7.zip?158253353515
+    - https://cdn.esoui.com/downloads/file2528/LibCombat-27.zip?158974714513
+    - https://cdn.esoui.com/downloads/file2079/LibFeedback-1.32.zip?156558316213
+lui_extended:
+  ref_link: https://www.esoui.com/downloads/info818-LuiExtended.html
+  link: https://cdn.esoui.com/downloads/file818/LuiExtended-6.0.7.zip
+  dependencies:
+    - https://cdn.esoui.com/downloads/file56/LibMediaProvider-1.0%20r13.zip
+    - https://cdn.esoui.com/downloads/file7/LibAddonMenu-2.0r30.zip
+show_guild_halls:
+  ref_link: https://www.esoui.com/downloads/info1720-GuildHallList.html
+  link: https://cdn.esoui.com/downloads/file1720/GuildHallListv1_2.zip?156562745715
+port_to_friends_house:
+  ref_link: https://www.esoui.com/downloads/info1758-PorttoFriendsHouse.html
+  link: https://cdn.esoui.com/downloads/file1758/Port%20To%20Friend's%20House%201.17.12.zip
+  dependencies:
+    - https://cdn.esoui.com/downloads/file7/LibAddonMenu-2.0r30.zip
+    - https://cdn.esoui.com/downloads/file1146/LibCustomMenu_v6.9.2.zip?158750352415
+slash_home:
+  ref_link: https://www.esoui.com/downloads/info2113-home.html
+  link: https://cdn.esoui.com/downloads/file2113/1568255577-SlashHome.zip?156825557813
+  allow_out_of_date: true
+xynode_mechanics:
+  ref_link: https://www.esoui.com/downloads/info2362-XynodesAllAboutMechanics.html
+  link: https://cdn.esoui.com/downloads/file2362/Xynode.zip?158802005715
+item_set_browser:
+  ref_link: https://www.esoui.com/downloads/info1480-ItemSetBrowser.html
+  link: https://cdn.esoui.com/downloads/file1480/ItemBrowser-2.0.0.zip?158746357715
+urichs_skill_point_finder:
+  ref_link: https://www.esoui.com/downloads/info1863-UrichsSkillPointFinder.html
+  link: https://cdn.esoui.com/downloads/file1863/USPF_5_1_0.zip?158969504815
+  dependencies:
+    - https://cdn.esoui.com/downloads/file7/LibAddonMenu-2.0r30.zip
+    - https://cdn.esoui.com/downloads/file2624/LibTableFunctions-1.0_v1_0_1.zip?158962719413
+constellations:
+  ref_link: https://www.esoui.com/downloads/info1736-Constellations.html
+  link: https://cdn.esoui.com/downloads/file1736/Constellations-0.4.18.zip?158729202015
+
+

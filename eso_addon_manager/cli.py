@@ -7,6 +7,7 @@ from eso_addon_manager import (
     __version__
 )
 from eso_addon_manager.config import Config
+from eso_addon_manager.filesystem import delete_directory_contents
 from eso_addon_manager.exceptions import (
     InvalidCommandError,
     NoConfigFileError
@@ -29,7 +30,8 @@ def run_subprogram():
         'help': cli_help,
         'config': cli_config,
         'update': cli_update,
-        'version': cli_version
+        'version': cli_version,
+        'delete': cli_delete
     }
 
     if len(sys.argv) == 1:
@@ -40,17 +42,19 @@ def run_subprogram():
     if command not in subprograms:
         raise InvalidCommandError(command)
 
-    subcommands = sys.argv[2:]
+    try:
+        subcommand = sys.argv[2:][0]
+    except IndexError:
+        subcommand = None
 
-    subprograms[command](*subcommands)
+    subprograms[command](subcommand)
 
 
-def cli_help():
-    print(
-        colorama.Fore.GREEN +
-        'Usage: eso_addons <command>\n Command must be one of config, update, version.\n Use eso_addons <command> help for more information' +
-        colorama.Style.RESET_ALL
-    )
+def cli_help(subcommand):
+    with print_color(colorama.Fore.GREEN):
+        print(
+            'Usage: eso_addons <command>\n Command must be one of config, update, delete, version.\n Use eso_addons <command> help for more information'
+        )
 
 
 def cli_config(subcommand):
@@ -122,7 +126,7 @@ def cli_config(subcommand):
     subprograms.get(subcommand, _cli_config_help)()
 
 
-def cli_update():
+def cli_update(subcommand):
     print(
         colorama.Fore.GREEN +
         'Starting update!' +
@@ -131,9 +135,16 @@ def cli_update():
     update_addons(Config.from_path(), yes_no_cb=prompt_yn)
 
 
-def cli_version():
+def cli_version(subcommand):
     with print_color(colorama.Fore.GREEN):
         print(f'Version {__version__}')
+
+
+def cli_delete(subcommand):
+    with print_color(colorama.Fore.YELLOW):
+        print('This will delete all of your addons! Are you sure you want to continue?')
+        if prompt_yn():
+            delete_directory_contents(constants.DEFAULT_ADDONS_DIRECTORY)
 
 
 def prompt_yn():
@@ -148,9 +159,7 @@ def prompt_yn():
             return False
         else:
             error += 1
-            print(
-                colorama.Fore.RED +
-                'Bad input, received {0} expected \'y\' or \'n\'' +
-                colorama.Style.RESET_ALL
-            )
+
+            with print_color(colorama.Fore.RED):
+                print('Bad input, received {0} expected \'y\' or \'n\'')
     exit(1)
