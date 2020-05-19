@@ -1,6 +1,6 @@
 import os
 
-_HOMEDIR = os.path.join(
+HOMEDIR = os.path.join(
 	os.environ['HomeDrive'],
     os.environ['HomePath']
 )
@@ -10,13 +10,13 @@ LOGGING_FORMAT = '%(asctime)s %(message)s'
 
 # Defaults for the configuration file.
 DEFAULT_CONFIG_PATH = os.path.join(
-    _HOMEDIR,
+    HOMEDIR,
     '.eso_addon_manager'
 )
 DEFAULT_PROMPT_TO_INSTALL = True
 DEFAULT_DELETE_TEMPORARY_DIRECTORIES_ON_ERROR = True
 DEFAULT_ADDONS_DIRECTORY = os.path.join(
-	_HOMEDIR,
+	HOMEDIR,
 	'Documents\\Elder Scrolls Online\\live\\AddOns'
 )
 
@@ -36,6 +36,6 @@ DEFAULT_CONFIG_FILE = {
 DEFAULT_BYTE_CHUNK_SIZE = 8192
 
 # GUI main window parameters
-MAIN_WINDOW_WIDTH = 500
+MAIN_WINDOW_WIDTH = 700
 MAIN_WINDOW_HEIGHT = 500
 MAIN_WINDOW_TITLE = 'Harro earthlings!!!!'
